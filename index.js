@@ -11,7 +11,8 @@ import './src/config/passportCofig.js';
 dotenv.config();
 dbConnect();
 const app = express();
-
+app.use(express.json());   
+app.use(express.urlencoded({ extended: true }));
 // Middleware
 const corsOptions = {
   origin: 'http://localhost:3001', 
